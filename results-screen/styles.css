@@ -1,0 +1,130 @@
+/* Fondo de la pantalla de puntuaciones */
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(220, 230, 255, 0.9); /* Fondo azul suave con transparencia */
+  color: rgb(10, 25, 50); /* Color de texto oscuro */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos del título de la tabla */
+h1 {
+  font-size: 38px;
+  color: #080535; /* Azul fuerte */
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave para el título */
+}
+
+
+#scoresTable {
+  width: 90%; /* Aumenta el ancho de la tabla al 90% */
+  border-collapse: collapse;
+  font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+  transition: transform 0.2s; /* Animación de transformación */
+}
+
+#scoresTable th, #scoresTable td {
+  border: 1px solid #ddd;
+  padding: 12px 15px; /* Aumenta el padding para más espacio */
+  text-align: left;
+}
+
+#scoresTable th {
+  background-color: #09113d; /* Color de fondo de la cabecera */
+  color: white;
+}
+
+#scoresTable tr {
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#scoresTable tr:hover {
+  background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
+  transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+}
+
+#scoresTable tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alterna el color de fondo para filas pares */
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto; /* Ajusta la altura según el contenido */
+  padding: 20px;
+}
+
+#finalScoresTable {
+  width: 90%; /* Aumenta el ancho de la tabla al 90% */
+  border-collapse: collapse;
+  font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+  transition: transform 0.2s; /* Animación de transformación */
+}
+
+#finalScoresTable th, #finalScoresTable td {
+  border: 1px solid #ddd;
+  padding: 12px 15px; /* Aumenta el padding para más espacio */
+  text-align: left;
+}
+
+#finalScoresTable th {
+  background-color: #09113d; /* Color de fondo de la cabecera */
+  color: white;
+}
+
+#finalScoresTable tr {
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#finalScoresTable tr:hover {
+  background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
+  transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+}
+
+#finalScoresTable tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alterna el color de fondo para filas pares */
+}
+#sortAlphabeticallyBtn {
+  background-color: #09113d; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 1.1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  margin-top: 15px; /* Espacio encima del botón */
+}
+
+#sortAlphabeticallyBtn:hover {
+  background-color: #1a0442; /* Color al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+
+h2 {
+  font-size: 2em; /* Tamaño del subtítulo */
+  text-align: center; /* Centrar el texto */
+  color: #12012e; /* Color verde para el subtítulo */
+  margin-bottom: 15px; /* Espacio debajo del subtítulo */
+}
+
+h4 {
+  font-size: 15px; /* Tamaño del subtítulo */
+  text-align: center; /* Centrar el texto */
+  color: #10064d; /* Color verde para el subtítulo */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#MensajeParaElGanador {
+  font-size: 1.5em; /* Tamaño del texto del mensaje del ganador */
+  text-align: center; /* Centrar el texto */
+  color: #1a4d42; /* Color rojo para el mensaje de ganador */
+  margin: 20px 0; /* Espacio alrededor del mensaje */
+}
