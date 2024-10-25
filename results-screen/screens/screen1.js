@@ -36,20 +36,20 @@ export default function renderScreen1() {
 		document.getElementById('players').innerHTML = listadoJugadores;
 	};
 
-	// Escuchar las actualizaciones de puntuación
+	// Este escucha las actualizaciones de puntuación
 	socket.on('puntuaciones', (data) => {
 		const { players } = data;
 		renderJugadores(players); // Actualizar la tabla de jugadores
 	});
 
-	// Escuchar cuando un nuevo jugador se une y renderizar los jugadores
+	// Despues de escuchar renderiza los jugadores
 	socket.on('userJoined', (db) => {
 		console.log('userJoined', db);
 		const { players } = db;
 		renderJugadores(players); 
 	});
 
-	// Escuchar el anuncio del ganador y redirigir a la pantalla de ganador
+	// Redirige la pantalla
 	socket.on('ganadorpuntos', (data) => {
 		console.log('ganador:', data.ganador);
 		router.navigateTo('/screen2'); // Redirigir a la pantalla 2

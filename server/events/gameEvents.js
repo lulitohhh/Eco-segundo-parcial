@@ -26,7 +26,7 @@ const gameEvents = (socket, io) => {
   // Handle the selection of "Polo" by "Marco"
   socket.on("onSelectPolo", onSelectPoloHandler(socket, db, io));
 
-  // Get winner data when transitioning to the results screen
+ 
   socket.on('getWinnerData', obtenerDatosGanador(socket, db));
 
 

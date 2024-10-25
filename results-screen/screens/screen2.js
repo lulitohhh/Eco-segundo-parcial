@@ -21,20 +21,20 @@ export default function renderScreen2() {
 		</div>
   `;
 
-	// Solicitar datos del ganador y los jugadores al servidor
+	// Solicita datos del ganador 
 	socket.emit('getWinnerData');
 
 	socket.on('ganadorpuntos', (data) => {
 		const { ganador, players } = data;
 
-		// Mostrar el mensaje del ganador en la pantalla
+		// muestra el mensaje para el ganador
 		document.getElementById('MensajeParaElGanador').textContent = `Después de un emocionante juego, ${ganador.toUpperCase()} ha alcanzado los 100 puntos y se lleva la victoria.`;
 
 		// Renderizar los jugadores
 		renderPlayers(players);
 	});
 
-	// Función para renderizar la lista de jugadores
+	// renderiza la tabla de jugadores
 	function renderPlayers(players) {
 		// Ordenar por puntuación de mayor a menor
 		players.sort((a, b) => b.score - a.score);
@@ -51,30 +51,30 @@ export default function renderScreen2() {
 			`;
 		});
 
-		// Renderizar la lista de jugadores en el HTML
+		
 		document.getElementById('finalPlayers').innerHTML = listadojugadores;
 	}
 
-	// Agregar evento para el botón "Ordenar alfabéticamente"
+	// Agrega el evento para Ordenar alfabéticamente
 	document.getElementById('sortAlphabeticallyBtn').addEventListener('click', () => {
 		// Obtener la lista actual de jugadores
 		const listadojugadoresElement = document.getElementById('finalPlayers');
 		const playersItems = Array.from(listadojugadoresElement.getElementsByTagName('tr'));
 
-		// Ordenar alfabéticamente
+		// Ordenar y comparar alfabéticamente
 		playersItems.sort((a, b) => {
-			const playerNameA = a.cells[1].textContent; // Obtener el nombre
-			const playerNameB = b.cells[1].textContent; // Obtener el nombre
-			return playerNameA.localeCompare(playerNameB); // Comparar alfabéticamente
+			const playerNameA = a.cells[1].textContent; 
+			const playerNameB = b.cells[1].textContent; 
+			return playerNameA.localeCompare(playerNameB); 
 		});
 		
-		// Limpiar la lista y agregar los elementos ordenados
+		// Limpia la lista de los jugadores y los organiza
 		listadojugadoresElement.innerHTML = '';
 		playersItems.forEach((item) => listadojugadoresElement.appendChild(item));
 		});
 		
 	socket.on('gameRestarted', (data) => {
 		console.log(data.message);
-		router.navigateTo('/'); // Navegar a la pantalla principal o lobby
+		router.navigateTo('/'); 
 	});
 }

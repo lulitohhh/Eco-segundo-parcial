@@ -75,11 +75,11 @@ const obtenerDatosGanador = (socket, db) => {
 const adjustScores = (marcoPlayer, poloSelected, poloEspecial) => {
     if (poloSelected.role === 'polo-especial') {
         marcoPlayer.score += 50; // Marco atrapa al Polo Especial
-        poloSelected.score -= 10; // Resta puntos al Polo Especial
+        poloSelected.score -= 10; // Se restan puntos al Polo Especial
     } else {
-        marcoPlayer.score -= 10; // Marco no atrapa al Polo Especial
+        marcoPlayer.score -= 10; 
         if (poloEspecial) {
-            poloEspecial.score += 10; // El Polo Especial gana puntos
+            poloEspecial.score += 10; 
         }
     }
 };
@@ -100,7 +100,7 @@ const onSelectPoloHandler = (socket, db, io) => {
         const poloSelected = db.players.find((user) => user.id === userID);
         const poloEspecial = db.players.find((user) => user.role === 'polo-especial');
 
-        // Ajustar puntajes según la selección del Polo
+       
         adjustScores(marcoPlayer, poloSelected, poloEspecial);
 
         // ESTO ES PARA DETERMINAR SI HAY GANADOR
